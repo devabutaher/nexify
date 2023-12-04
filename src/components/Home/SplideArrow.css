@@ -1,0 +1,22 @@
+@media (min-width: 1024px) {
+  .splide__pagination--ttb {
+    right: unset;
+  }
+  .splide__pagination {
+    right: unset;
+  }
+}
+
+.dark .splide__pagination__page {
+  background: rgb(250, 250, 250);
+}
+.dark .splide__pagination__page.is-active {
+  background: rgb(255, 255, 255);
+}
+
+.splide__pagination__page {
+  background: rgb(0, 0, 0);
+}
+.splide__pagination__page.is-active {
+  background: rgb(0, 0, 0);
+}
