@@ -18,6 +18,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { ThemeToggle } from "../ThemeProvider/ThemeToggle";
 
 const products = [
   {
@@ -60,7 +61,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -162,6 +163,9 @@ export default function Example() {
               Company
             </Link>
           </Button>
+
+          {/* theme button */}
+          <ThemeToggle />
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button>
@@ -187,6 +191,9 @@ export default function Example() {
                 alt=""
               />
             </Link>
+
+            {/* theme toggle */}
+            <ThemeToggle />
             <Button
               variant={"ghost"}
               className="-m-2.5 rounded-md p-2.5"
@@ -216,7 +223,7 @@ export default function Example() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm leading-7 text-foreground hover:bg-muted font-semibold"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -227,19 +234,19 @@ export default function Example() {
                 </Disclosure>
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted"
                 >
                   Features
                 </Link>
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted"
                 >
                   Marketplace
                 </Link>
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted"
                 >
                   Company
                 </Link>
@@ -247,7 +254,7 @@ export default function Example() {
               <div className="py-6">
                 <Link
                   href="/login"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-foreground hover:bg-muted"
                 >
                   Log In
                 </Link>
@@ -258,4 +265,6 @@ export default function Example() {
       </Dialog>
     </header>
   );
-}
+};
+
+export default Navbar;
